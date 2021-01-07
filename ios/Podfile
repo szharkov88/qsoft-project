@@ -8,6 +8,7 @@ target 'QsoftProject' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'QsoftProjectTests' do
     inherit! :complete
     # Pods for testing

@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, Platform} from 'react-native';
-import {THEME} from './../theme';
+import {THEME} from '../theme';
 import {AppButton} from '../components/ui/AppButton';
 
 export default function HelloScreen({onPress}) {
