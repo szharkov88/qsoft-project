@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image, Platform} from 'react-native';
+import {StyleSheet, View, Text, Image, Platform, Dimensions} from 'react-native';
 import {THEME} from '../theme';
 import {AppButton} from '../components/ui/AppButton';
 
@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginVertical: 50,
-    marginHorizontal: 10,
+    justifyContent: 'space-around',
+    marginVertical: Dimensions.get('window').height * 0.04,
+    marginHorizontal: 10
   },
   backgroundImage: {
-    marginTop: 50,
-    width: 400,
-    height: 400,
+    marginTop: Dimensions.get('window').height * 0.03,
+    width: Dimensions.get('window').width,
+    resizeMode: 'contain'
   },
   bottomContainer: {},
   title: {
@@ -56,5 +56,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: Platform.OS === 'android' ? 'lato_bold' : 'Avenir',
     fontWeight: '500',
+    marginBottom: Dimensions.get('window').height * 0.1
   },
 });
