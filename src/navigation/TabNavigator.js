@@ -2,8 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import {FavoritesStackNavigator, MainStackNavigator} from './StackNavigator';
-import {THEME} from "../theme";
-import {Dimensions} from "react-native";
+import {THEME} from '../theme';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,20 +19,19 @@ export default function BottomTabNavigator() {
             iconName = 'heart';
           }
 
-          return <Feather name={iconName} size={35} color={color} />;
-        }
+          return <Feather name={iconName} size={33} color={color} />;
+        },
       })}
       tabBarOptions={{
         activeTintColor: '#5533EA',
         inactiveTintColor: '#BDBDBD',
-          style: {
-              width: '100%',
-              paddingBottom: 3,
-              backgroundColor: THEME.BC_COLOR,
-              paddingHorizontal: 120
-          }
-      }}
-    >
+        style: {
+          width: '100%',
+          paddingTop: 2,
+          backgroundColor: THEME.BC_COLOR,
+          paddingHorizontal: 120,
+        },
+      }}>
       <Tab.Screen
         name="Home"
         component={MainStackNavigator}

@@ -11,10 +11,10 @@ const Stack = createStackNavigator();
 const screenOptionStyle = {
   headerStyle: {
     backgroundColor: THEME.BC_COLOR,
-      height: '8%'
+      height: 80
   },
-  headerTintColor: 'white',
-  headerBackTitle: 'Back',
+  headerTintColor: THEME.MAIN_COLOR,
+  headerBackTitle: '',
 };
 
 const MainStackNavigator = () => {
@@ -24,14 +24,14 @@ const MainStackNavigator = () => {
         name="Main"
         component={MainScreen}
         options={{
-          title: '',
+          title: 'Main',
         }}
       />
       <Stack.Screen
         name="Post"
         component={PostScreen}
         options={{
-          title: '',
+          title: 'Post',
         }}
       />
     </Stack.Navigator>

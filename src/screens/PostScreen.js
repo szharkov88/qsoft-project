@@ -1,11 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import NavBar from '../components/NavBar';
+import {StyleSheet, View, Text} from 'react-native';
+import {THEME} from '../theme';
 
 export default function MainScreen() {
   return (
     <View style={styles.container}>
-      <NavBar />
       <Text>Post Screen</Text>
     </View>
   );
@@ -13,6 +12,10 @@ export default function MainScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     marginHorizontal: 20,
+    backgroundColor: THEME.BC_COLOR,
   },
 });
