@@ -1,4 +1,5 @@
 import React from 'react';
+import {Dimensions} from 'react-native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import {FavoritesStackNavigator, MainStackNavigator} from './StackNavigator';
@@ -29,7 +30,7 @@ export default function BottomTabNavigator() {
           width: '100%',
           paddingTop: 2,
           backgroundColor: THEME.BC_COLOR,
-          paddingHorizontal: 120,
+          paddingHorizontal: Dimensions.get('window').width * 0.3,
         },
       }}>
       <Tab.Screen

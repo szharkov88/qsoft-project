@@ -14,6 +14,7 @@ export default function MainScreen({navigation}) {
         data={DATA}
         keyExtractor={(post) => post.id.toString()}
         renderItem={({item}) => <Post post={item} />}
+        initialNumToRender={8}
       />
     </View>
   );

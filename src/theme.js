@@ -5,4 +5,5 @@ export const THEME = {
   BC_COLOR: '#F5F5FA',
   BLACK_COLOR: '#333333',
   TEXT_COLOR: '#4F4F4F',
+  RED_COLOR: 'rgb(202,54,45)'
 };
