@@ -24,14 +24,14 @@ const MainStackNavigator = () => {
         name="Main"
         component={MainScreen}
         options={{
-          title: 'Main',
+          title: '',
         }}
       />
       <Stack.Screen
         name="Post"
         component={PostScreen}
         options={{
-          title: 'Post',
+          title: '',
         }}
       />
     </Stack.Navigator>
