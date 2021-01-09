@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 import {THEME} from '../../theme';
 
-export const AppButton = ({onPress}) => {
+export const AppButton = ({onPress, title}) => {
   const Wrapper =
     Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
   return (
     <Wrapper onPress={onPress} activeOpacity={0.7} style={styles.wrapper}>
       <View style={styles.button}>
-        <Text style={styles.text}>Skip</Text>
+        <Text style={styles.text}>{title}</Text>
       </View>
     </Wrapper>
   );

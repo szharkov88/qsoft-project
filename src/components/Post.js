@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, StyleSheet, Image, Text, Dimensions} from 'react-native';
+import {View, StyleSheet, Image, Text, Dimensions, TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {THEME} from '../theme';
 
-export const Post = ({post}) => {
+export const Post = ({post, onOpen}) => {
 
   let likeElement = <FontAwesome name={'heart-o'} size={14} color={THEME.GREY_COLOR}/>
 
@@ -13,20 +13,22 @@ export const Post = ({post}) => {
   }
 
   return (
-    <View style={styles.post}>
-      <Image style={styles.image} source={{uri: post.img}}/>
-      <View style={styles.infoBlock}>
-        <Text style={styles.title}>{post.name}</Text>
-        <View style={styles.locationBlock}>
-          <Feather name={'map-pin'} size={13} color={THEME.MAIN_COLOR} />
-          <Text style={styles.locationTitle}>{post.location}</Text>
+    <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(post)}>
+      <View style={styles.post}>
+        <Image style={styles.image} source={{uri: post.img}}/>
+        <View style={styles.infoBlock}>
+          <Text style={styles.title}>{post.name}</Text>
+          <View style={styles.locationBlock}>
+            <Feather name={'map-pin'} size={13} color={THEME.MAIN_COLOR} />
+            <Text style={styles.locationTitle}>{post.location}</Text>
+          </View>
+          <Text style={styles.text}>{post.text}</Text>
         </View>
-        <Text style={styles.text}>{post.text}</Text>
+        <View style={styles.likedBlock}>
+          {likeElement}
+        </View>
       </View>
-      <View style={styles.likedBlock}>
-        {likeElement}
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

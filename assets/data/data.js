@@ -6,6 +6,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '2',
@@ -14,6 +16,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '3',
@@ -22,6 +26,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '4',
@@ -30,6 +36,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '5',
@@ -38,6 +46,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '6',
@@ -46,6 +56,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '7',
@@ -54,6 +66,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '8',
@@ -62,6 +76,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '9',
@@ -70,6 +86,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '10',
@@ -78,6 +96,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '11',
@@ -86,6 +106,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '12',
@@ -94,6 +116,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '13',
@@ -102,6 +126,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '14',
@@ -110,6 +136,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '15',
@@ -118,6 +146,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '16',
@@ -126,6 +156,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '17',
@@ -134,6 +166,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '18',
@@ -142,6 +176,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '19',
@@ -150,6 +186,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '20',
@@ -158,6 +196,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '21',
@@ -166,6 +206,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '22',
@@ -174,6 +216,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '23',
@@ -182,6 +226,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '24',
@@ -190,6 +236,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '25',
@@ -198,6 +246,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '26',
@@ -206,6 +256,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '27',
@@ -214,6 +266,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '28',
@@ -222,6 +276,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '29',
@@ -230,6 +286,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '30',
@@ -238,6 +296,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '31',
@@ -246,6 +306,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '32',
@@ -254,6 +316,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '33',
@@ -262,6 +326,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '34',
@@ -270,6 +336,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '35',
@@ -278,6 +346,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '36',
@@ -286,6 +356,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '37',
@@ -294,6 +366,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '38',
@@ -302,6 +376,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '39',
@@ -310,6 +386,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '40',
@@ -318,6 +396,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '41',
@@ -326,6 +406,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '42',
@@ -334,6 +416,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '43',
@@ -342,6 +426,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '44',
@@ -350,6 +436,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '45',
@@ -358,6 +446,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '46',
@@ -366,6 +456,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '47',
@@ -374,6 +466,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '48',
@@ -382,6 +476,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '49',
@@ -390,6 +486,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '50',
@@ -398,6 +496,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '51',
@@ -406,6 +506,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '52',
@@ -414,6 +516,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '53',
@@ -422,6 +526,8 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Male',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
   {
     id: '54',
@@ -430,5 +536,7 @@ export const DATA = [
     location: 'New York City',
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
+    gender: 'Female',
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
   },
 ];

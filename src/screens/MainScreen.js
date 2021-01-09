@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  FlatList
-} from 'react-native';
+import {StyleSheet, View, FlatList} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
 import {DATA} from '../../assets/data/data';
 import {Post} from '../components/Post';
-import {LoadMoreButton} from "../components/ui/LoadMoreButton";
+import {LoadMoreButton} from '../components/ui/LoadMoreButton';
 
 export default function MainScreen({navigation}) {
   const [offset, setOffset] = useState(7);
@@ -28,35 +24,40 @@ export default function MainScreen({navigation}) {
   };
 
   const renderFooter = () => {
-      if (!fullLoadData) {
-          return (
-              <LoadMoreButton onPress={getData} loading={loading}/>
-          );
-      } else return null
+    if (!fullLoadData) {
+      return <LoadMoreButton onPress={getData} loading={loading} />;
+    } else {
+      return null;
+    }
+  };
+
+  const openPostHandler = (post) => {
+    navigation.navigate('Post', {id: post.id, img: post.img, name: post.name, location: post.location, description: post.description, gender: post.gender});
   };
 
   return (
-        <View style={styles.container}>
-            <NavBar />
-            <FlatList
-                style={styles.listWrapper}
-                data={dataList}
-                keyExtractor={(post) => post.id.toString()}
-                renderItem={({item}) => <Post post={item} />}
-                ListFooterComponent={renderFooter}
-            />
-        </View>
+    <View style={styles.container}>
+      <NavBar />
+      <FlatList
+        style={styles.listWrapper}
+        data={dataList}
+        keyExtractor={(post) => post.id.toString()}
+        renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+        ListFooterComponent={renderFooter}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-      justifyContent: 'center',
+    justifyContent: 'center',
     marginHorizontal: 20,
-    backgroundColor: THEME.BC_COLOR
+    backgroundColor: THEME.BC_COLOR,
+    marginTop: 30
   },
   listWrapper: {
-    marginTop: 10
+    marginTop: 10,
   },
 });

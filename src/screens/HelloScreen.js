@@ -18,7 +18,7 @@ export default function HelloScreen({onPress}) {
             fatigue.
           </Text>
         </View>
-        <AppButton onPress={onPress} />
+        <AppButton onPress={onPress} title={'Skip'}/>
       </View>
     </View>
   );

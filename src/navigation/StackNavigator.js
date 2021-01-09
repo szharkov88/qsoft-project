@@ -11,9 +11,9 @@ const Stack = createStackNavigator();
 const screenOptionStyle = {
   headerStyle: {
     backgroundColor: THEME.BC_COLOR,
-      height: 80
+    height: 0,
   },
-  headerTintColor: THEME.MAIN_COLOR,
+  headerTintColor: 'transparent',
   headerBackTitle: '',
 };
 
@@ -32,6 +32,9 @@ const MainStackNavigator = () => {
         component={PostScreen}
         options={{
           title: '',
+          headerStyle: {
+            height: 0,
+          },
         }}
       />
     </Stack.Navigator>
@@ -44,6 +47,7 @@ const FavoritesStackNavigator = () => {
       <Stack.Screen
         name="Favorites"
         component={FavoritesScreen}
+        screenOptions={{}}
         options={{
           title: '',
         }}
@@ -53,6 +57,9 @@ const FavoritesStackNavigator = () => {
         component={PostScreen}
         options={{
           title: '',
+          headerStyle: {
+            height: 0,
+          },
         }}
       />
     </Stack.Navigator>

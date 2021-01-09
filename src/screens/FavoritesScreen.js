@@ -31,17 +31,21 @@ export default function MainScreen({navigation}) {
     }
   };
 
+  const openPostHandler = (post) => {
+    navigation.navigate('Post', {id: post.id, img: post.img, name: post.name, location: post.location, description: post.description, gender: post.gender});
+  };
+
   return (
-    <View style={styles.container}>
-      <NavBar />
-      <FlatList
-        style={styles.listWrapper}
-        data={dataList}
-        keyExtractor={(post) => post.id.toString()}
-        renderItem={({item}) => <Post post={item} />}
-        ListFooterComponent={renderFooter}
-      />
-    </View>
+      <View style={styles.container}>
+        <NavBar />
+        <FlatList
+            style={styles.listWrapper}
+            data={dataList}
+            keyExtractor={(post) => post.id.toString()}
+            renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+            ListFooterComponent={renderFooter}
+        />
+      </View>
   );
 }
 
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 20,
     backgroundColor: THEME.BC_COLOR,
+    marginTop: 30
   },
   listWrapper: {
     marginTop: 10,
