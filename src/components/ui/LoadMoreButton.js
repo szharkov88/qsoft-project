@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   wrapper: {
+    minWidth: 150,
     width: '40%',
     marginTop: -20,
   },

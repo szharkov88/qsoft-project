@@ -5,11 +5,19 @@ import {THEME} from '../theme';
 import {DATA} from '../../assets/data/data';
 import {Post} from '../components/Post';
 import {LoadMoreButton} from '../components/ui/LoadMoreButton';
+import {FilterItem} from '../components/FilterItem'
 
 export default function MainScreen({navigation}) {
   const [offset, setOffset] = useState(7);
   const [loading, setLoading] = useState(false);
   const [fullLoadData, setFullLoadData] = useState(false);
+
+  const filterArr = [
+    {id: '1', animalType: 'Cats'},
+    {id: '2', animalType: 'Dogs'},
+    {id: '3', animalType: 'Birds'},
+    {id: '4', animalType: 'Other'},
+  ];
 
   const dataList = DATA.slice(0, offset);
 
@@ -32,18 +40,34 @@ export default function MainScreen({navigation}) {
   };
 
   const openPostHandler = (post) => {
-    navigation.navigate('Post', {id: post.id, img: post.img, name: post.name, location: post.location, description: post.description, gender: post.gender});
+    navigation.navigate('Post', {
+      id: post.id,
+      img: post.img,
+      name: post.name,
+      location: post.location,
+      description: post.description,
+      gender: post.gender,
+    });
   };
 
   return (
     <View style={styles.container}>
       <NavBar />
       <FlatList
+          data={filterArr}
+          keyExtractor={(filterItem) => filterItem.id.toString()}
+          renderItem={({item}) => <FilterItem filterData={item}/>}
+          horizontal={true}
+          style={styles.filterFlatList}
+          showsHorizontalScrollIndicator={false}
+      />
+      <FlatList
         style={styles.listWrapper}
         data={dataList}
         keyExtractor={(post) => post.id.toString()}
         renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
         ListFooterComponent={renderFooter}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -53,11 +77,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
     backgroundColor: THEME.BC_COLOR,
-    marginTop: 30
+    paddingTop: 30,
   },
   listWrapper: {
-    marginTop: 10,
+    marginTop: 20,
+    marginBottom: 14
   },
+  filterFlatList: {
+    marginTop: 20
+  }
 });

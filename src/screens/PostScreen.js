@@ -47,7 +47,7 @@ export default function PostScreen({route, navigation}) {
           source={require('../img/PostScreen/Dog-big.png')}
         />
         <ScrollView style={styles.modalWrapper}>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{justifyContent: 'center', alignItems: 'center', marginBottom: 16}}>
             <View style={styles.wrapper}>
               <Text style={styles.name}>{name}</Text>
               <View style={styles.location}>
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.BC_COLOR,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
+    maxHeight: Dimensions.get('window').height * 0.5
   },
   wrapper: {
     marginHorizontal: 24,

@@ -53,11 +53,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
     backgroundColor: THEME.BC_COLOR,
-    marginTop: 30
+    paddingTop: 30
   },
   listWrapper: {
     marginTop: 10,
+    marginBottom: 14
   },
 });
