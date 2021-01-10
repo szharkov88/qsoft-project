@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux'
-import {StyleSheet, View, FlatList} from 'react-native';
+import {useSelector} from 'react-redux'
+import {StyleSheet, View, FlatList, Text} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
 import {Post} from '../components/Post';
@@ -65,25 +65,37 @@ export default function MainScreen({navigation}) {
     });
   };
 
+  let content = (
+      <FlatList
+      style={styles.listWrapper}
+      data={dataList}
+      keyExtractor={(post) => post.id.toString()}
+      renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+      ListFooterComponent={renderFooter}
+      showsVerticalScrollIndicator={false}
+  />
+  )
+
+  useEffect(() => {
+    if (dataList.length === 0) {
+      content = (<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}><Text>Постов нет</Text></View>)
+    }
+  }, [])
+
+  console.log(dataList.length);
+
   return (
     <View style={styles.container}>
       <NavBar />
       <FlatList
-        data={filterArr}
-        keyExtractor={(filterItem) => filterItem.id.toString()}
-        renderItem={({item}) => <FilterItem filterData={item} />}
-        horizontal={true}
-        style={styles.filterFlatList}
-        showsHorizontalScrollIndicator={false}
+          data={filterArr}
+          keyExtractor={(filterItem) => filterItem.id.toString()}
+          renderItem={({item}) => <FilterItem filterData={item} />}
+          horizontal={true}
+          style={styles.filterFlatList}
+          showsHorizontalScrollIndicator={false}
       />
-      <FlatList
-        style={styles.listWrapper}
-        data={dataList}
-        keyExtractor={(post) => post.id.toString()}
-        renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
-        ListFooterComponent={renderFooter}
-        showsVerticalScrollIndicator={false}
-      />
+      {content}
     </View>
   );
 }

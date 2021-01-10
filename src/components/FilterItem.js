@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 import {THEME} from '../theme';
 
 export const FilterItem = ({filterData}) => {
-  console.log(filterData);
   return (
     <View style={styles.wrapper}>
       <Text style={styles.text}>{filterData.animalType}</Text>

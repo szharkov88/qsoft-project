@@ -1,21 +1,43 @@
 import React from 'react';
-import {View, StyleSheet, Image, Text, Dimensions, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {THEME} from '../theme';
+import {useDispatch} from 'react-redux';
+import {toogleLiked} from '../store/actions/post';
 
 export const Post = ({post, onOpen}) => {
+  const dispatch = useDispatch();
 
-  let likeElement = <FontAwesome name={'heart-o'} size={14} color={THEME.GREY_COLOR} onPress={() => console.log('fdsd')}/>
+  const toggleHandler = () => {
+    dispatch(toogleLiked(post.id));
+  };
+
+  let likeElement = (
+    <TouchableOpacity activeOpacity={0.2} onPress={toggleHandler}>
+      <FontAwesome name={'heart-o'} size={14} color={THEME.GREY_COLOR} />
+    </TouchableOpacity>
+  );
 
   if (post.liked) {
-    likeElement = <FontAwesome name={'heart'} size={14} color={THEME.RED_COLOR} onPress={() => console.log('fdsd')}/>
+    likeElement = (
+      <TouchableOpacity activeOpacity={0.2} onPress={toggleHandler}>
+        <FontAwesome name={'heart'} size={14} color={THEME.RED_COLOR} />
+      </TouchableOpacity>
+    );
   }
 
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(post)}>
       <View style={styles.post}>
-        <Image style={styles.image} source={{uri: post.img}}/>
+        <Image style={styles.image} source={{uri: post.img}} />
         <View style={styles.infoBlock}>
           <Text style={styles.title}>{post.name}</Text>
           <View style={styles.locationBlock}>
@@ -24,9 +46,7 @@ export const Post = ({post, onOpen}) => {
           </View>
           <Text style={styles.text}>{post.text}</Text>
         </View>
-        <View style={styles.likedBlock}>
-          {likeElement}
-        </View>
+        <View style={styles.likedBlock}>{likeElement}</View>
       </View>
     </TouchableOpacity>
   );
@@ -48,17 +68,17 @@ const styles = StyleSheet.create({
   },
   infoBlock: {
     flexWrap: 'wrap',
-    paddingRight: 10
+    paddingRight: 10,
   },
   title: {
     fontFamily: 'Avenir',
     fontSize: 20,
     fontWeight: '800',
     marginBottom: 6,
-    color: THEME.BLACK_COLOR
+    color: THEME.BLACK_COLOR,
   },
   locationBlock: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   locationTitle: {
     marginLeft: 5,
@@ -74,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     maxWidth: Dimensions.get('window').width * 0.5,
-    paddingRight: 40
+    paddingRight: 40,
   },
   likedBlock: {
     position: 'absolute',
@@ -87,6 +107,6 @@ const styles = StyleSheet.create({
     borderColor: THEME.MAIN_COLOR,
     borderStyle: 'solid',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
