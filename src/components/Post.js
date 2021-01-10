@@ -6,10 +6,10 @@ import {THEME} from '../theme';
 
 export const Post = ({post, onOpen}) => {
 
-  let likeElement = <FontAwesome name={'heart-o'} size={14} color={THEME.GREY_COLOR}/>
+  let likeElement = <FontAwesome name={'heart-o'} size={14} color={THEME.GREY_COLOR} onPress={() => console.log('fdsd')}/>
 
   if (post.liked) {
-    likeElement = <FontAwesome name={'heart'} size={14} color={THEME.RED_COLOR}/>
+    likeElement = <FontAwesome name={'heart'} size={14} color={THEME.RED_COLOR} onPress={() => console.log('fdsd')}/>
   }
 
   return (

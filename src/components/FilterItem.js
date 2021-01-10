@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     paddingLeft: 22,
     paddingBottom: 6,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    minHeight: 22
   },
   text: {
     fontFamily: 'Avenir',

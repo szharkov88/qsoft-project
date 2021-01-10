@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View, Text, Image, Platform, Dimensions} from 'react-native';
 import {THEME} from '../theme';
 import {AppButton} from '../components/ui/AppButton';
+import {useDispatch} from 'react-redux';
+import {loadPosts} from '../store/actions/post';
 
 export default function HelloScreen({onPress}) {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadPosts())
+  }, [dispatch])
+
   return (
     <View style={styles.screen}>
       <View style={styles.container}>

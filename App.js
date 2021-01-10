@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import HelloScreen from './src/screens/HelloScreen';
 import AppNavigation from './src/navigation/AppNavigation';
+import {Provider} from 'react-redux';
+import store from './src/store'
 
 export default function App() {
   [skip, setSkip] = useState(false)
@@ -20,5 +22,8 @@ export default function App() {
     )
   }
 
-  return <>{content}</>
+  return (
+      <Provider store={store}>
+        {content}
+      </Provider>)
 }

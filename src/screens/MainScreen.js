@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux'
 import {StyleSheet, View, FlatList} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
-import {DATA} from '../../assets/data/data';
 import {Post} from '../components/Post';
 import {LoadMoreButton} from '../components/ui/LoadMoreButton';
-import {FilterItem} from '../components/FilterItem'
+import {FilterItem} from '../components/FilterItem';
 
 export default function MainScreen({navigation}) {
   const [offset, setOffset] = useState(7);
@@ -17,15 +17,30 @@ export default function MainScreen({navigation}) {
     {id: '2', animalType: 'Dogs'},
     {id: '3', animalType: 'Birds'},
     {id: '4', animalType: 'Other'},
-  ];
+  ]
 
-  const dataList = DATA.slice(0, offset);
+  const animalTypeFilter = []
+
+  const allPosts = useSelector(state => state.post.allPosts)
+
+  let dataList = allPosts.slice(0, offset)
+
+  if (animalTypeFilter.length > 0) {
+    dataList = allPosts.filter((post) => animalTypeFilter.includes(post.type)).slice(0, offset);
+  }
+
+  useEffect(() => {
+    if (dataList.length < 7) {
+      setFullLoadData(true)
+    }
+    return
+  }, [])
 
   const getData = () => {
     console.log('Getting Data...');
     setLoading(true);
     setOffset(offset + 8);
-    if (DATA.length - dataList.length <= 7) {
+    if ((allPosts.length - dataList.length <= 7) || (dataList.length < 7)) {
       setFullLoadData(true);
     }
     setLoading(false);
@@ -54,12 +69,12 @@ export default function MainScreen({navigation}) {
     <View style={styles.container}>
       <NavBar />
       <FlatList
-          data={filterArr}
-          keyExtractor={(filterItem) => filterItem.id.toString()}
-          renderItem={({item}) => <FilterItem filterData={item}/>}
-          horizontal={true}
-          style={styles.filterFlatList}
-          showsHorizontalScrollIndicator={false}
+        data={filterArr}
+        keyExtractor={(filterItem) => filterItem.id.toString()}
+        renderItem={({item}) => <FilterItem filterData={item} />}
+        horizontal={true}
+        style={styles.filterFlatList}
+        showsHorizontalScrollIndicator={false}
       />
       <FlatList
         style={styles.listWrapper}
@@ -83,9 +98,10 @@ const styles = StyleSheet.create({
   },
   listWrapper: {
     marginTop: 20,
-    marginBottom: 14
+    marginBottom: 14,
   },
   filterFlatList: {
-    marginTop: 20
-  }
+    marginTop: 20,
+    maxHeight: 33
+  },
 });

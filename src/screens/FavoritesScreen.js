@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux'
 import {StyleSheet, View, FlatList} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
-import {DATA} from '../../assets/data/data';
 import {Post} from '../components/Post';
 import {LoadMoreButton} from '../components/ui/LoadMoreButton';
 
@@ -11,13 +11,22 @@ export default function MainScreen({navigation}) {
   const [loading, setLoading] = useState(false);
   const [fullLoadData, setFullLoadData] = useState(false);
 
-  const dataList = DATA.filter(post => post.liked).slice(0, offset);
+  const likedPosts = useSelector(state => state.post.likedPosts)
+
+  const dataList = likedPosts.slice(0, offset);
+
+  useEffect(() => {
+    if (dataList.length < 7) {
+      setFullLoadData(true)
+    }
+    return
+  }, [])
 
   const getData = () => {
     console.log('Getting Data...');
     setLoading(true);
     setOffset(offset + 8);
-    if (DATA.filter(post => post.liked).length - dataList.length <= 7) {
+    if (likedPosts.length - dataList.length <= 7) {
       setFullLoadData(true);
     }
     setLoading(false);
@@ -32,20 +41,28 @@ export default function MainScreen({navigation}) {
   };
 
   const openPostHandler = (post) => {
-    navigation.navigate('Post', {id: post.id, img: post.img, name: post.name, location: post.location, description: post.description, gender: post.gender});
+    navigation.navigate('Post', {
+      id: post.id,
+      img: post.img,
+      name: post.name,
+      location: post.location,
+      description: post.description,
+      gender: post.gender,
+    });
   };
 
   return (
-      <View style={styles.container}>
-        <NavBar />
-        <FlatList
-            style={styles.listWrapper}
-            data={dataList}
-            keyExtractor={(post) => post.id.toString()}
-            renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
-            ListFooterComponent={renderFooter}
-        />
-      </View>
+    <View style={styles.container}>
+      <NavBar />
+      <FlatList
+        style={styles.listWrapper}
+        data={dataList}
+        keyExtractor={(post) => post.id.toString()}
+        renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+        ListFooterComponent={renderFooter}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 }
 
@@ -55,10 +72,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
     backgroundColor: THEME.BC_COLOR,
-    paddingTop: 30
+    paddingTop: 30,
   },
   listWrapper: {
     marginTop: 10,
-    marginBottom: 14
+    marginBottom: 14,
   },
 });

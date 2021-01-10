@@ -17,7 +17,7 @@ const screenOptionStyle = {
   headerBackTitle: '',
 };
 
-const MainStackNavigator = () => {
+const MainStackNavigator = ({navigation}) => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
@@ -34,7 +34,7 @@ const MainStackNavigator = () => {
           title: '',
           headerStyle: {
             height: 0,
-          },
+          }
         }}
       />
     </Stack.Navigator>

@@ -14,6 +14,7 @@ import {AppButton} from '../components/ui/AppButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function PostScreen({route, navigation}) {
+
   const {id, img, name, location, description, gender} = route.params;
 
   const goBack = () => {

@@ -7,7 +7,8 @@ export const DATA = [
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
     gender: 'Male',
-    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...',
+    type: 'Cats'
   },
   {
     id: '2',
@@ -17,7 +18,8 @@ export const DATA = [
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
     gender: 'Male',
-    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...',
+    type: 'Dogs'
   },
   {
     id: '3',
@@ -27,7 +29,8 @@ export const DATA = [
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: false,
     gender: 'Male',
-    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...',
+    type: 'Birds'
   },
   {
     id: '4',
@@ -37,7 +40,8 @@ export const DATA = [
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
     gender: 'Male',
-    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...',
+    type: 'Birds'
   },
   {
     id: '5',
@@ -517,7 +521,8 @@ export const DATA = [
     text: 'Taking care of a pet is my favorite, it helps me to...',
     liked: true,
     gender: 'Male',
-    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...'
+    description: 'The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam...',
+    type: 'Cats'
   },
   {
     id: '53',
