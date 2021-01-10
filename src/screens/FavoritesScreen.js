@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux'
-import {StyleSheet, View, FlatList} from 'react-native';
+import {StyleSheet, View, FlatList, Text} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
 import {Post} from '../components/Post';
@@ -66,6 +66,21 @@ export default function MainScreen({navigation}) {
     });
   };
 
+  let content = (
+      <FlatList
+          style={styles.listWrapper}
+          data={dataList}
+          keyExtractor={(post) => post.id.toString()}
+          renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+          ListFooterComponent={renderFooter}
+          showsVerticalScrollIndicator={false}
+      />
+  )
+
+  if (dataList.length === 0) {
+    content = (<View style={styles.postListIsEmpty}><Text style={styles.postListIsEmptyText} >Постов нет</Text></View>)
+  }
+
   return (
     <View style={styles.container}>
       <NavBar />
@@ -77,14 +92,7 @@ export default function MainScreen({navigation}) {
           style={styles.filterFlatList}
           showsHorizontalScrollIndicator={false}
       />
-      <FlatList
-        style={styles.listWrapper}
-        data={dataList}
-        keyExtractor={(post) => post.id.toString()}
-        renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
-        ListFooterComponent={renderFooter}
-        showsVerticalScrollIndicator={false}
-      />
+      {content}
     </View>
   );
 }
@@ -105,4 +113,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 14,
   },
+  postListIsEmpty: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  postListIsEmptyText: {
+    color: THEME.TEXT_COLOR,
+    fontFamily: 'Avenir',
+    fontSize: 15,
+    fontWeight: '500'
+  }
 });

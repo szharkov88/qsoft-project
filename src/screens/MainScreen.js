@@ -76,13 +76,10 @@ export default function MainScreen({navigation}) {
   />
   )
 
-  useEffect(() => {
     if (dataList.length === 0) {
-      content = (<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}><Text>Постов нет</Text></View>)
-    }
-  }, [])
+      content = (<View style={styles.postListIsEmpty}><Text style={styles.postListIsEmptyText} >Постов нет</Text></View>)
+  }
 
-  console.log(dataList.length);
 
   return (
     <View style={styles.container}>
@@ -116,4 +113,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
     maxHeight: 33
   },
+  postListIsEmpty: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  postListIsEmptyText: {
+    color: THEME.TEXT_COLOR,
+    fontFamily: 'Avenir',
+    fontSize: 15,
+    fontWeight: '500'
+  }
 });
