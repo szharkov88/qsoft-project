@@ -1,12 +1,41 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {THEME} from '../theme';
+import {useDispatch} from 'react-redux';
+import {addFilter} from '../store/actions/post';
 
-export const FilterItem = ({filterData}) => {
+export const FilterItem = ({filterData, arr}) => {
+  const [onStyleWrapper, setOnStyleWrapper] = useState(null);
+  const [onStyleText, setOnStyleText] = useState(null);
+
+  const dispatch = useDispatch();
+
+  const toggleFilter = () => {
+    dispatch(addFilter(filterData.animalType));
+  };
+
+  useEffect(() => {
+    if (arr.includes(filterData.animalType)) {
+      setOnStyleWrapper({backgroundColor: '#421EB7'});
+      setOnStyleText({color: '#FFFFFF'});
+    } else {
+      setOnStyleWrapper(null);
+      setOnStyleText({color: '#7878AB'});
+    }
+    return;
+  }, [arr]);
+
   return (
-    <View style={styles.wrapper}>
-      <Text style={styles.text}>{filterData.animalType}</Text>
-    </View>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={{...styles.wrapper, ...onStyleWrapper}}
+      onPress={toggleFilter}>
+      <View>
+        <Text style={{...styles.text, ...onStyleText}}>
+          {filterData.animalType}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -22,13 +51,13 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 22
+    minHeight: 22,
   },
   text: {
     fontFamily: 'Avenir',
     fontWeight: '800',
     color: '#7878AB',
     fontSize: 14,
-    minHeight: 20
+    minHeight: 20,
   },
 });

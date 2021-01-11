@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
 import NavBar from '../components/NavBar';
 import {THEME} from '../theme';
@@ -17,35 +17,56 @@ export default function MainScreen({navigation}) {
     {id: '2', animalType: 'Dogs'},
     {id: '3', animalType: 'Birds'},
     {id: '4', animalType: 'Other'},
-  ]
+  ];
 
-  const animalTypeFilter = []
+  const likedPosts = useSelector((state) => state.post.likedPosts);
 
-  const likedPosts = useSelector(state => state.post.likedPosts)
+  const animalTypeFilter = useSelector((state) => state.post.filterArr);
 
-  const dataList = likedPosts.slice(0, offset);
+  let dataList = likedPosts.slice(0, offset);
+
+  const filterArrayForButton = likedPosts.filter((post) =>
+    animalTypeFilter.includes(post.type),
+  );
 
   if (animalTypeFilter.length > 0) {
-    dataList = allPosts.filter((post) => animalTypeFilter.includes(post.type)).slice(0, offset);
+    dataList = likedPosts
+      .filter((post) => animalTypeFilter.includes(post.type))
+      .slice(0, offset);
   }
 
+  // useEffect(() => {
+  //   if (dataList.length < 7) {
+  //     setFullLoadData(true);
+  //   } else setFullLoadData(false)
+  //   return;
+  // }, [dataList]);
+
+  useEffect(() => {
+    if (filterArrayForButton.length === 0) {
+      if (likedPosts <= 7 || likedPosts.length === dataList.length) {
+        setFullLoadData(true);
+      } else {
+        setFullLoadData(false);
+      }
+    } else {
+      if (
+        filterArrayForButton <= 7 ||
+        filterArrayForButton.length === dataList.length
+      ) {
+        setFullLoadData(true);
+      } else {
+        setFullLoadData(false);
+      }
+    }
+  }, [dataList, offset, filterArrayForButton, likedPosts]);
 
   const getData = () => {
     console.log('Getting Data...');
     setLoading(true);
     setOffset(offset + 8);
-    if (likedPosts.length - dataList.length <= 7) {
-      setFullLoadData(true);
-    }
     setLoading(false);
   };
-
-  useEffect(() => {
-    if (dataList.length < 7) {
-      setFullLoadData(true)
-    }
-    return
-  }, [getData])
 
   const renderFooter = () => {
     if (!fullLoadData) {
@@ -67,30 +88,36 @@ export default function MainScreen({navigation}) {
   };
 
   let content = (
-      <FlatList
-          style={styles.listWrapper}
-          data={dataList}
-          keyExtractor={(post) => post.id.toString()}
-          renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
-          ListFooterComponent={renderFooter}
-          showsVerticalScrollIndicator={false}
-      />
-  )
+    <FlatList
+      style={styles.listWrapper}
+      data={dataList}
+      keyExtractor={(post) => post.id.toString()}
+      renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
+      ListFooterComponent={renderFooter}
+      showsVerticalScrollIndicator={false}
+    />
+  );
 
   if (dataList.length === 0) {
-    content = (<View style={styles.postListIsEmpty}><Text style={styles.postListIsEmptyText} >Постов нет</Text></View>)
+    content = (
+      <View style={styles.postListIsEmpty}>
+        <Text style={styles.postListIsEmptyText}>Постов нет</Text>
+      </View>
+    );
   }
 
   return (
     <View style={styles.container}>
       <NavBar />
       <FlatList
-          data={filterArr}
-          keyExtractor={(filterItem) => filterItem.id.toString()}
-          renderItem={({item}) => <FilterItem filterData={item} />}
-          horizontal={true}
-          style={styles.filterFlatList}
-          showsHorizontalScrollIndicator={false}
+        data={filterArr}
+        keyExtractor={(filterItem) => filterItem.id.toString()}
+        renderItem={({item}) => (
+          <FilterItem filterData={item} arr={animalTypeFilter} />
+        )}
+        horizontal={true}
+        style={styles.filterFlatList}
+        showsHorizontalScrollIndicator={false}
       />
       {content}
     </View>
@@ -107,7 +134,8 @@ const styles = StyleSheet.create({
   },
   filterFlatList: {
     marginTop: 20,
-    maxHeight: 33
+    maxHeight: 33,
+    minHeight: 33,
   },
   listWrapper: {
     marginTop: 20,
@@ -116,12 +144,12 @@ const styles = StyleSheet.create({
   postListIsEmpty: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   postListIsEmptyText: {
     color: THEME.TEXT_COLOR,
     fontFamily: 'Avenir',
     fontSize: 15,
-    fontWeight: '500'
-  }
+    fontWeight: '500',
+  },
 });

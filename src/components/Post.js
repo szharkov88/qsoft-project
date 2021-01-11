@@ -10,7 +10,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {THEME} from '../theme';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {toogleLiked} from '../store/actions/post';
 
 export const Post = ({post, onOpen}) => {
