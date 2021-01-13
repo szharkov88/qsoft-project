@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -14,8 +14,14 @@ import {AppButton} from '../components/ui/AppButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function PostScreen({route, navigation}) {
-
+  const [showFullText, setShowFullText] = useState(null)
+  const [hideMore, setHideMore] = useState(null)
   const {id, img, name, location, description, gender} = route.params;
+
+  const showText = () => {
+    setShowFullText({maxHeight: 999})
+    setHideMore({display: 'none'})
+  }
 
   const goBack = () => {
     navigation.goBack();
@@ -68,14 +74,14 @@ export default function PostScreen({route, navigation}) {
                 <View style={styles.genderSubBlock}>
                   <View style={styles.circle}>
                     <Image
-                      style={styles.iconIMage}
+                      style={styles.iconImage}
                       source={require('../img/sex.png')}
                     />
                   </View>
                   <Text>{gender}</Text>
                 </View>
               </View>
-              <Text style={styles.mainText}>{description}</Text>
+              <View style={{minWidth: '100%'}}><Text style={{...styles.mainText, ...showFullText}}>{description}</Text><Text style={{...styles.showMore, ...hideMore}} onPress={showText}>More</Text></View>
               <View style={styles.gallery}>
                 <View style={styles.galleryBlock}>
                   <Image
@@ -122,10 +128,10 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.BC_COLOR,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    maxHeight: Dimensions.get('window').height * 0.5
+    height: Dimensions.get('window').height * 0.45,
+    paddingHorizontal: 24
   },
   wrapper: {
-    marginHorizontal: 24,
   },
   name: {
     color: THEME.BLACK_COLOR,
@@ -182,10 +188,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 16,
+    overflow: 'hidden',
+    maxHeight: 50
   },
   gallery: {
     flexDirection: 'row',
-    marginTop: 16,
+    marginTop: 26,
     marginBottom: 37,
   },
   galleryBlock: {
@@ -207,4 +215,14 @@ const styles = StyleSheet.create({
     width: 243,
     marginLeft: Dimensions.get('window').width - 243
   },
+  showMore: {
+    color: THEME.MAIN_COLOR,
+    fontFamily: 'Avenir',
+    fontWeight: '800',
+    fontSize: 16,
+    lineHeight: 24,
+    position: 'absolute',
+    bottom: -24,
+    right: 3
+  }
 });
