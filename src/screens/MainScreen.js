@@ -37,21 +37,6 @@ export default function MainScreen({navigation}) {
       .slice(0, offset);
   }
 
-  // useEffect(() => {
-  //   if (dataList.length < 7) {
-  //     setFullLoadData(true);
-  //   } else if (filterArrayForButton.length > 0) {
-  //     if (dataList.length === animalTypeFilter.length) {
-  //       setFullLoadData(true);
-  //     } else if (animalTypeFilter.length - dataList.length < 7) {setFullLoadData(false)}
-  //   } else if (filterArrayForButton.length === 0) {
-  //     if (allPosts.length - dataList.length < 7 || dataList.length < 7) {
-  //       setFullLoadData(true);
-  //     }
-  //   }
-  //
-  // }, [dataList, offset]);
-
   useEffect(() => {
     if (filterArrayForButton.length === 0) {
       if (allPosts <= 7 || allPosts.length === dataList.length) {

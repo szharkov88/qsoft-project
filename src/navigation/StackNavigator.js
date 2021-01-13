@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-
 import MainScreen from '../screens/MainScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import PostScreen from '../screens/PostScreen';
@@ -17,7 +16,12 @@ const screenOptionStyle = {
   headerBackTitle: '',
 };
 
-const MainStackNavigator = ({navigation}) => {
+const MainStackNavigator = ({navigation, route}) => {
+  // if (route.state && route.state.routeNames[route.state.index] === 'Post') {
+  //   navigation.setOptions({tabBarVisible: false});
+  // } else {
+  //   navigation.setOptions({tabBarVisible: true});
+  // }
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
@@ -34,14 +38,19 @@ const MainStackNavigator = ({navigation}) => {
           title: '',
           headerStyle: {
             height: 0,
-          }
+          },
         }}
       />
     </Stack.Navigator>
   );
 };
 
-const FavoritesStackNavigator = () => {
+const FavoritesStackNavigator = ({navigation, route}) => {
+    // if (route.state && route.state.routeNames[route.state.index] === 'Post') {
+    //     navigation.setOptions({tabBarVisible: false});
+    // } else {
+    //     navigation.setOptions({tabBarVisible: true});
+    // }
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen

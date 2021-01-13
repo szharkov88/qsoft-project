@@ -129,9 +129,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     height: Dimensions.get('window').height * 0.45,
-    paddingHorizontal: 24
+    paddingHorizontal: 24,
   },
   wrapper: {
+
   },
   name: {
     color: THEME.BLACK_COLOR,
