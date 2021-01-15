@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.BC_COLOR,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    height: Dimensions.get('window').height * 0.45,
+    height: Dimensions.get('window').height * 0.5,
     paddingHorizontal: 24,
   },
   wrapper: {
