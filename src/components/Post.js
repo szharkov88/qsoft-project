@@ -10,14 +10,18 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {THEME} from '../theme';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {toogleLiked} from '../store/actions/post';
 
-export const Post = ({post, onOpen}) => {
+export const Post = ({post, navigation}) => {
   const dispatch = useDispatch();
 
   const toggleHandler = () => {
     dispatch(toogleLiked(post.id));
+  };
+
+  const openPostHandler = (post) => {
+    navigation.navigate('Post', post);
   };
 
   let likeElement = (
@@ -35,7 +39,7 @@ export const Post = ({post, onOpen}) => {
   }
 
   return (
-    <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(post)}>
+    <TouchableOpacity activeOpacity={0.7} onPress={() => openPostHandler(post)}>
       <View style={styles.post}>
         <Image style={styles.image} source={{uri: post.img}} />
         <View style={styles.infoBlock}>

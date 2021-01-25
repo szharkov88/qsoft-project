@@ -2,9 +2,13 @@ import {ADD_FILTER, LOAD_POSTS, TOGGLE_LIKED} from '../types';
 import {DATA} from '../../../assets/data/data';
 
 export const loadPosts = () => {
-  return {
-    type: LOAD_POSTS,
-    payload: DATA,
+  return async (dispatch) => {
+    setTimeout(() => {
+      dispatch({
+        type: LOAD_POSTS,
+        payload: DATA,
+      });
+    }, 2000);
   };
 };
 

@@ -14,23 +14,13 @@ import {AppButton} from '../components/ui/AppButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function PostScreen({route, navigation}) {
-  const [showFullText, setShowFullText] = useState(null)
-  const [hideMore, setHideMore] = useState(null)
-  const {id, img, name, location, description, gender} = route.params;
-
-  const showText = () => {
-    setShowFullText({maxHeight: 999})
-    setHideMore({display: 'none'})
-  }
-
-  const goBack = () => {
-    navigation.goBack();
-  };
+  const [showFullText, setShowFullText] = useState(false);
+  const post = route.params;
 
   const aduptNow = () => {
     navigation.goBack();
     console.log(
-      `Порода питомца: ${name}, находится в городе ${location}. Пол этого животного ${gender}.`,
+      `Порода питомца: ${post.name}, находится в городе ${post.location}. Пол этого животного ${post.gender}.`,
     );
   };
 
@@ -38,28 +28,28 @@ export default function PostScreen({route, navigation}) {
     <View style={styles.container}>
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={goBack}
+        onPress={navigation.goBack}
         style={styles.arrow}>
         <AntDesign name={'left'} size={25} color={THEME.BC_COLOR} />
       </TouchableOpacity>
       <View
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0
-        }}>
+        style={styles.whiteMainBlock}>
         <Image
           style={styles.backgroundImage}
           source={require('../img/PostScreen/Dog-big.png')}
         />
         <ScrollView style={styles.modalWrapper}>
-          <View style={{justifyContent: 'center', alignItems: 'center', marginBottom: 16}}>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginBottom: 16,
+            }}>
             <View style={styles.wrapper}>
-              <Text style={styles.name}>{name}</Text>
+              <Text style={styles.name}>{post.name}</Text>
               <View style={styles.location}>
                 <Feather name={'map-pin'} size={14} color={THEME.MAIN_COLOR} />
-                <Text style={styles.city}>{location}</Text>
+                <Text style={styles.city}>{post.location}</Text>
               </View>
               <View style={styles.genderBlock}>
                 <View style={styles.genderSubBlock}>
@@ -69,7 +59,7 @@ export default function PostScreen({route, navigation}) {
                       source={require('../img/leg.png')}
                     />
                   </View>
-                  <Text style={styles.genderText}>{name}</Text>
+                  <Text style={styles.genderText}>{post.name}</Text>
                 </View>
                 <View style={styles.genderSubBlock}>
                   <View style={styles.circle}>
@@ -78,10 +68,22 @@ export default function PostScreen({route, navigation}) {
                       source={require('../img/sex.png')}
                     />
                   </View>
-                  <Text>{gender}</Text>
+                  <Text>{post.gender}</Text>
                 </View>
               </View>
-              <View style={{minWidth: '100%'}}><Text style={{...styles.mainText, ...showFullText}}>{description}</Text><Text style={{...styles.showMore, ...hideMore}} onPress={showText}>More</Text></View>
+              <View style={{minWidth: '100%'}}>
+                <Text
+                  style={styles.mainText}
+                  numberOfLines={showFullText ? null : 3}
+                  ellipsizeMode={'tail'}>
+                  {post.description}
+                </Text>
+                <Text
+                  style={!showFullText ? styles.showMore : styles.showMoreOn}
+                  onPress={() => setShowFullText(true)}>
+                  More
+                </Text>
+              </View>
               <View style={styles.gallery}>
                 <View style={styles.galleryBlock}>
                   <Image
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 40,
     left: 10,
-    zIndex: 5
+    zIndex: 5,
   },
   modalWrapper: {
     backgroundColor: THEME.BC_COLOR,
@@ -131,9 +133,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.5,
     paddingHorizontal: 24,
   },
-  wrapper: {
-
-  },
+  wrapper: {},
   name: {
     color: THEME.BLACK_COLOR,
     fontFamily: 'Avenir',
@@ -189,8 +189,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 16,
-    overflow: 'hidden',
-    maxHeight: 50
   },
   gallery: {
     flexDirection: 'row',
@@ -214,7 +212,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     height: 243,
     width: 243,
-    marginLeft: Dimensions.get('window').width - 243
+    marginLeft: Dimensions.get('window').width - 243,
   },
   showMore: {
     color: THEME.MAIN_COLOR,
@@ -223,7 +221,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     position: 'absolute',
-    bottom: -24,
-    right: 3
+    bottom: -25,
+    right: 20,
+  },
+  showMoreOn: {
+    display: 'none',
+  },
+  whiteMainBlock: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
   }
 });

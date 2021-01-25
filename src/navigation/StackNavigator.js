@@ -16,12 +16,7 @@ const screenOptionStyle = {
   headerBackTitle: '',
 };
 
-const MainStackNavigator = ({navigation, route}) => {
-  // if (route.state && route.state.routeNames[route.state.index] === 'Post') {
-  //   navigation.setOptions({tabBarVisible: false});
-  // } else {
-  //   navigation.setOptions({tabBarVisible: true});
-  // }
+const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen
@@ -45,12 +40,7 @@ const MainStackNavigator = ({navigation, route}) => {
   );
 };
 
-const FavoritesStackNavigator = ({navigation, route}) => {
-    // if (route.state && route.state.routeNames[route.state.index] === 'Post') {
-    //     navigation.setOptions({tabBarVisible: false});
-    // } else {
-    //     navigation.setOptions({tabBarVisible: true});
-    // }
+const FavoritesStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen

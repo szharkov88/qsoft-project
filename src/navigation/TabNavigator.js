@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import {FavoritesStackNavigator, MainStackNavigator} from './StackNavigator';
@@ -21,27 +21,25 @@ export default function BottomTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
+        tabBarIcon: ({color}) => {
           let iconName;
-
+          const iconsList = {
+            Home: 'home',
+            Liked: 'heart',
+          };
           if (route.name === 'Home') {
-            iconName = 'home';
+            iconName = iconsList.Home;
           } else if (route.name === 'Liked') {
-            iconName = 'heart';
+            iconName = iconsList.Liked;
           }
 
           return <Feather name={iconName} size={33} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#5533EA',
-        inactiveTintColor: '#BDBDBD',
-        style: {
-          width: '100%',
-          paddingTop: 2,
-          backgroundColor: THEME.BC_COLOR,
-          paddingHorizontal: Dimensions.get('window').width * 0.3,
-        },
+        activeTintColor: THEME.ACTIVE_NAVIGATION_COLOR,
+        inactiveTintColor: THEME.INACTIVE_NAVIGATION_COLOR,
+        style: styles.tabBar,
       }}>
       <Tab.Screen
         name="Home"
@@ -62,3 +60,12 @@ export default function BottomTabNavigator() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    width: '100%',
+    paddingTop: 2,
+    backgroundColor: THEME.BC_COLOR,
+    paddingHorizontal: Dimensions.get('window').width * 0.3,
+  },
+});
