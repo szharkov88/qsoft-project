@@ -3,7 +3,6 @@
 
 ![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0844.PNG)
 ![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0845.PNG)
-![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0846.PNG)
 ![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0847.PNG)
 ![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0848.PNG)
 ![alt text](https://github.com/szharkov88/qsoft-project/blob/main/screenshots/IMG_0849.PNG)
